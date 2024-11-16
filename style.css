@@ -1,0 +1,389 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #111;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid #fff;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+header img {
+    height: 3rem;
+}
+
+.logo-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+header .nav {
+    display: flex;
+    gap: 2rem;
+    list-style-type: none;
+    /* Removes bullets or "pin" */
+}
+
+header .nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.7rem;
+}
+
+header .nav a:hover {
+    color: #000000;
+    background-color: #fff;
+    border-radius: 10px;
+
+}
+
+/* Home Section */
+#home {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url("./assets/home.jpg");
+    background-size: cover; /* Cover the entire area */
+    background-position: center;
+}
+
+
+
+#home .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Or higher, depending on the context */
+    backdrop-filter: blur(10px);
+}
+
+#home .content {
+    color: #fff;
+    z-index: 1;
+    max-width: 600px;
+    font-weight: bold;
+    font-size: 3rem; /* Adjust as needed */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 1); /* Add shadow */
+}
+
+#home .SFDLE-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+
+
+/* Sections */
+section {
+
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+section p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    header .logo-title {
+        font-size: 1.5rem;
+    }
+
+    #home .SFDLE-title {
+        font-size: 2rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+
+    #home .btn {
+        padding: 8px 16px;
+    }
+
+    section {
+        padding: 50px 20px;
+    }
+}
+
+
+/* Story Section */
+.story-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* Align items at the top */
+    justify-content: center;
+    /* Creates space between image and text */
+    gap: 2rem;
+    max-width: 100%;
+    padding: 100px 50px;
+
+}
+
+.story-image {
+
+    /* Balances size between image and text */
+    max-width: 45%;
+    /* Restricts image width */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.story-text {
+
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    /* Ensures text is aligned to the left */
+
+}
+
+.story-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-align: left;
+    /* Aligns the heading to the left */
+    margin-top: 0;
+    /* Prevent extra space above heading */
+}
+
+.story-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: left;
+    /* Aligns the paragraph to the left */
+}
+
+@media (max-width: 1100px) {
+    .story-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        /* Center-align text for narrow screens */
+    }
+
+    .story-image {
+        max-width: 80%;
+        /* Scales the image appropriately */
+    }
+
+    .story-text {
+        max-width: 90%;
+        /* Ensures text takes up most of the width */
+        text-align: center;
+        /* Aligns text to the center for smaller screens */
+    }
+}
+
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden; /* Hide overflow to ensure only one panel is visible at a time */
+    position: relative;
+    width: 100%;
+}
+
+.panel {
+    min-width: 100vw; /* Each panel takes the full width of the viewport */
+    height: 100vh; /* Each panel takes the full height of the viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #202020;
+    color: white;
+    font-size: 2rem;
+    box-sizing: border-box; /* Ensure padding and borders are included in width/height calculation */
+}
+
+.container .panel:nth-child(odd) {
+    background-color: #111114;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Align items at the top */
+    justify-content: center;
+    /* Creates space between image and text */
+    gap: 2rem;
+    max-width: 100%;
+    padding: 100px 50px;
+    height: 80vh;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    background: #3586ff;
+    min-height: 100px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .social-icon,
+  .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+  }
+  
+  .social-icon__item,
+  .menu__item {
+    list-style: none;
+  }
+  
+  .social-icon__link {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+  }
+  .social-icon__link:hover {
+    transform: translateY(-10px);
+  }
+  
+  .menu__link {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+    font-weight: 300;
+  }
+  
+  .menu__link:hover {
+    opacity: 1;
+  }
+  
+  .footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  
+  .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("https://i.ibb.co/wQZVxxk/wave.png");
+    background-size: 1000px 100px;
+  }
+  
+  .wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWaves 4s linear infinite;
+  }
+  
+  .wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animate 4s linear infinite !important;
+  }
+  
+  .wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWaves 3s linear infinite;
+  }
+  
+  .wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animate 3s linear infinite;
+  }
+  
+  @keyframes animateWaves {
+    0% {
+      background-position-x: 1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+  
+  @keyframes animate {
+    0% {
+      background-position-x: -1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+  
