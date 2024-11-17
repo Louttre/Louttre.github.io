@@ -25,3 +25,16 @@ gsap.to(sections, {
         }
     },
 });
+
+// Get the chevron container and the target story section
+const chevronContainer = document.querySelector('.chevron-container');
+const storySection = document.getElementById('story');
+
+// Add click event listener to the chevron container
+chevronContainer.addEventListener('click', function() {
+    // Scroll smoothly to the story section
+    storySection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'  // Align the top of the section to the viewport
+    });
+});
